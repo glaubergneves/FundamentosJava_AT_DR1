@@ -1,12 +1,17 @@
 package br.edu.infnet.model.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Consulta {
     private float valor;
     private String medico;
-    private Date dataHora;
+    private LocalDateTime dataHora;
     private Paciente paciente;
+
+    public Consulta() {
+        this.dataHora = LocalDateTime.now();
+    }
 
     public float getValor() {
         return valor;
@@ -24,14 +29,6 @@ public class Consulta {
         this.medico = medico;
     }
 
-    public Date getDataHora() {
-        return dataHora;
-    }
-
-    public void setDataHora(Date dataHora) {
-        this.dataHora = dataHora;
-    }
-
     public Paciente getPaciente() {
         return paciente;
     }
@@ -42,6 +39,7 @@ public class Consulta {
 
     @Override
     public String toString() {
-        return String.format("%.2f;%s;%s;%s", valor, medico, dataHora, paciente);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return String.format("%.2f;%s;%s;%s", valor, medico, dataHora.format(formato), paciente);
     }
 }

@@ -12,7 +12,6 @@ public class ConsultaTest {
         consulta.setValor(500);
         consulta.setPaciente(paciente);
         consulta.setMedico("Gilson");
-        consulta.setDataHora(new Date());
         System.out.println(consulta);
     }
 }
