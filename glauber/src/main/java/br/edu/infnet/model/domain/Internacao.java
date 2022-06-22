@@ -1,5 +1,7 @@
 package br.edu.infnet.model.domain;
 
+import br.edu.infnet.model.exception.HospitalInvalidoException;
+
 public class Internacao extends Servico {
     private String duracao;
     private String hospital;
@@ -29,7 +31,10 @@ public class Internacao extends Servico {
         return hospital;
     }
 
-    public void setHospital(String hospital) {
+    public void setHospital(String hospital) throws HospitalInvalidoException {
+        if (hospital.isBlank()) {
+            throw new HospitalInvalidoException("Deve ter um hospital.");
+        }
         this.hospital = hospital;
     }
 

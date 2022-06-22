@@ -1,5 +1,7 @@
 package br.edu.infnet.model.domain;
 
+import br.edu.infnet.model.exception.MedicoInvalidoException;
+
 public class Cirurgia extends Servico {
     private boolean emergencia;
     private String duracao;
@@ -29,7 +31,10 @@ public class Cirurgia extends Servico {
         return medico;
     }
 
-    public void setMedico(String medico) {
+    public void setMedico(String medico) throws MedicoInvalidoException {
+        if (medico.isBlank()) {
+            throw new MedicoInvalidoException("Deve ter um médico para cirurgia.");
+        }
         this.medico = medico;
     }
 
@@ -43,9 +48,9 @@ public class Cirurgia extends Servico {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(duracao + ";")
-          .append(emergencia + ";")
-          .append(medico)
-          .append(completarDescricao());
+                .append(emergencia + ";")
+                .append(medico)
+                .append(completarDescricao());
         return sb.toString();
     }
 }

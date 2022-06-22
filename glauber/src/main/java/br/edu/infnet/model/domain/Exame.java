@@ -1,5 +1,7 @@
 package br.edu.infnet.model.domain;
 
+import br.edu.infnet.model.exception.TipoInvalidoException;
+
 public class Exame extends Servico {
     private String tipo;
     private String laudo;
@@ -13,7 +15,10 @@ public class Exame extends Servico {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(String tipo) throws TipoInvalidoException {
+        if (tipo.isBlank()) {
+            throw new TipoInvalidoException("Não é possível um exame ter tipo vazio.");
+        }
         this.tipo = tipo;
     }
 
@@ -43,9 +48,9 @@ public class Exame extends Servico {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(tipo + ";")
-          .append(laudo + ";")
-          .append(preparacao)
-          .append(completarDescricao());
+                .append(laudo + ";")
+                .append(preparacao)
+                .append(completarDescricao());
         return sb.toString();
     }
 }
