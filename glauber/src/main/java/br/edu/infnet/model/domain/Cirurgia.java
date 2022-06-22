@@ -40,8 +40,7 @@ public class Cirurgia extends Servico {
 
     @Override
     public String completarDescricao() {
-        String descricaoCompleta = "O médico: " + getMedico() + ", fará uma cirurgia em que " + super.getDescricao();
-        return descricaoCompleta;
+        return "O médico " + getMedico() + " fará a cirurgia";
     }
 
     @Override
@@ -49,7 +48,7 @@ public class Cirurgia extends Servico {
         StringBuilder sb = new StringBuilder();
         sb.append(duracao + ";")
                 .append(emergencia + ";")
-                .append(medico)
+                .append(medico + ";")
                 .append(completarDescricao());
         return sb.toString();
     }

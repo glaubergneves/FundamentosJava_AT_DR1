@@ -1,13 +1,13 @@
 package br.edu.infnet.model.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Paciente {
     private String nome;
     private String cpf;
-    private Date dataNascimento;
-
-    public Paciente(String nome, String cpf, Date dataNascimento) {
+    private LocalDate dataNascimento;
+    
+    public Paciente(String nome, String cpf, LocalDate dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -21,7 +21,7 @@ public class Paciente {
         return cpf;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
     

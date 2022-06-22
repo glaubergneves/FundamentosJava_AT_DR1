@@ -10,7 +10,7 @@ public class CirurgiaTest {
             cirurgia.setDuracao("1 hora");
             cirurgia.setEmergencia(true);
             cirurgia.setMedico("Roberto");
-            System.out.println(cirurgia + cirurgia.completarDescricao());
+            System.out.println(cirurgia);
         } catch (MedicoInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
         }

@@ -40,8 +40,7 @@ public class Internacao extends Servico {
 
     @Override
     public String completarDescricao() {
-        String descricaoCompleta = "No hospital" + hospital + " " + super.getDescricao();
-        return descricaoCompleta;
+        return "No hospital " + hospital;
     }
 
     @Override
@@ -49,7 +48,7 @@ public class Internacao extends Servico {
         StringBuilder sb = new StringBuilder();
         sb.append(duracao + ";")
           .append(hospital + ";")
-          .append(paciente)
+          .append(paciente + ";")
           .append(completarDescricao());
         return sb.toString();
     }

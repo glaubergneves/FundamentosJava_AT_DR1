@@ -10,7 +10,7 @@ public class ExameTest {
             exame.setLaudo("Hemacias em milhões/mm³: 4,4");
             exame.setPreparacao("Jejum");
             exame.setTipo("Hemograma");
-            System.out.println(exame + exame.completarDescricao());
+            System.out.println(exame);
         } catch (TipoInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
         }

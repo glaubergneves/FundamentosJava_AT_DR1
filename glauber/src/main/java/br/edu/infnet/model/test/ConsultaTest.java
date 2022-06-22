@@ -1,7 +1,7 @@
 package br.edu.infnet.model.test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import br.edu.infnet.model.domain.Cirurgia;
@@ -20,7 +20,7 @@ public class ConsultaTest {
         try {
             List<Servico> servicos = new ArrayList<Servico>();
             Consulta consulta = new Consulta();
-            Paciente paciente = new Paciente("Robert", "555.222.111-63", new Date());
+            Paciente paciente = new Paciente("Robert", "555.222.111-63", LocalDate.parse("1984-04-06"));
             Exame exame = new Exame("Exame de sangue", "E02", "Exame");
             Cirurgia cirurgia = new Cirurgia("Cirurgia apendicite", "C01", "Cirurgia");
             Internacao internacao = new Internacao("Recuperação", "I07", "Internação");
@@ -31,7 +31,7 @@ public class ConsultaTest {
             cirurgia.setEmergencia(true);
             cirurgia.setMedico("Roberto");
             internacao.setDuracao("7 dias");
-            internacao.setHospital("Hospital HCB");
+            internacao.setHospital("HCB");
             internacao.setPaciente(paciente);
             servicos.add(exame);
             servicos.add(cirurgia);
@@ -39,6 +39,7 @@ public class ConsultaTest {
             consulta.setValor(500);
             consulta.setPaciente(paciente);
             consulta.setMedico("Gilson");
+            consulta.setServicos(servicos);
             System.out.println(consulta);
         } catch (TipoInvalidoException | HospitalInvalidoException | MedicoInvalidoException | ValorInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());

@@ -40,8 +40,7 @@ public class Exame extends Servico {
 
     @Override
     public String completarDescricao() {
-        String descricaoCompleta = "Como preparacao para o exame temos: " + getPreparacao() + super.getDescricao();
-        return descricaoCompleta;
+        return "Como preparacao para o exame temos: " + getPreparacao();
     }
 
     @Override
@@ -49,7 +48,7 @@ public class Exame extends Servico {
         StringBuilder sb = new StringBuilder();
         sb.append(tipo + ";")
                 .append(laudo + ";")
-                .append(preparacao)
+                .append(preparacao + ";")
                 .append(completarDescricao());
         return sb.toString();
     }
