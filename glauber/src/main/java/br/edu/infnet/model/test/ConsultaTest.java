@@ -32,7 +32,6 @@ public class ConsultaTest {
             cirurgia.setMedico("Roberto");
             internacao.setDuracao("7 dias");
             internacao.setHospital("HCB");
-            internacao.setPaciente(paciente);
             servicos.add(exame);
             servicos.add(cirurgia);
             servicos.add(internacao);

@@ -1,0 +1,4 @@
+E;Exame de sangue;E02;Exame;Hemacias em milhões 4,4;Jejum;Hemograma
+C;Cirurgia apendicite;C01;Cirurgia;1 hora;true;Roberto
+I;Recuperação;I07;Internação;7 dias;HNB
+CONSULTA;2100;Roberto;Glauber;012.345.678-99;2004-05-05

@@ -1,0 +1,1 @@
+Paciente: Glauber;012.345.678-99;2004-05-05 | Medico: Roberto | Valor: 2100.0 | Data: 2022-06-23T20:01:25.134892100 | Quantidade de serviços: 3

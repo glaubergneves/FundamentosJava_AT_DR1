@@ -57,4 +57,15 @@ public class Consulta {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return String.format("%.2f;%s;%s;%s;%d", valor, medico, dataHora.format(formato), paciente, servicos.size());
     }
+
+    public String obterDadosArquivo() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Paciente: " + paciente + " | ")
+                .append("Medico: " + medico + " | ")
+                .append("Valor: " + valor + " | ")
+                .append("Data: " + dataHora + " | ")
+                .append("Quantidade de serviços: " + servicos.size())
+                .append("\r\n");
+        return sb.toString();
+    }
 }

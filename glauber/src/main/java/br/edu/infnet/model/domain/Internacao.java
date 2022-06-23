@@ -5,7 +5,6 @@ import br.edu.infnet.model.exception.HospitalInvalidoException;
 public class Internacao extends Servico {
     private String duracao;
     private String hospital;
-    private Paciente paciente;
 
     public Internacao(String descricao, String sala, String tipo) {
         super(descricao, sala, tipo);
@@ -17,14 +16,6 @@ public class Internacao extends Servico {
 
     public void setDuracao(String duracao) {
         this.duracao = duracao;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
     }
 
     public String getHospital() {
@@ -48,7 +39,6 @@ public class Internacao extends Servico {
         StringBuilder sb = new StringBuilder();
         sb.append(duracao + ";")
           .append(hospital + ";")
-          .append(paciente + ";")
           .append(completarDescricao());
         return sb.toString();
     }

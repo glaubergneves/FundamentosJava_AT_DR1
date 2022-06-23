@@ -16,7 +16,7 @@ public class Exame extends Servico {
     }
 
     public void setTipo(String tipo) throws TipoInvalidoException {
-        if (tipo.isBlank()) {
+        if (tipo == null) {
             throw new TipoInvalidoException("Não é possível um exame ter tipo vazio.");
         }
         this.tipo = tipo;
